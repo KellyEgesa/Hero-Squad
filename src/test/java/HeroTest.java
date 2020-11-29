@@ -21,7 +21,7 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_containsAllHero_true() throws Exception{
+    public void newHero_containsAllHero_true() throws Exception {
         Hero testHero = setUpHero();
         Hero secondTestHero = new Hero("Thor", 32, "hammer", "loki");
         assertTrue(Hero.getAllHero().contains(testHero));
@@ -29,8 +29,8 @@ public class HeroTest {
     }
 
     @Test(expected = AssertionError.class)
-    public void newHero_ifAStringToBeEnteredIsNull_exception() throws  Exception{
-        Hero testHeroNullUserName = new Hero("",  25, "webCrawler", "MaryJane");
+    public void newHero_ifAStringToBeEnteredIsNull_exception() throws Exception {
+        Hero testHeroNullUserName = new Hero("", 25, "webCrawler", "MaryJane");
         Hero testHeroNullHeroAge = new Hero("SpiderMan", 25, "", "MaryJane");
         Hero testHeroNullHeroWeakness = new Hero("SpiderMan", 25, "", "MaryJane");
         assertFalse(Hero.getAllHero().contains(testHeroNullHeroAge));
@@ -39,7 +39,7 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_returnsCorrectId_1() throws Exception{
+    public void newHero_returnsCorrectId_1() throws Exception {
         Hero testHero = setUpHero();
         assertEquals(1, testHero.getId());
     }
@@ -51,7 +51,7 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_returnsCorrectHeroByIdWhen2() throws Exception{
+    public void newHero_returnsCorrectHeroByIdWhen2() throws Exception {
         Hero testHero = setUpHero();
         Hero secondTestHero = new Hero("Thor", 32, "hammer", "loki");
         assertEquals(2, Hero.getById(secondTestHero.getId()).getId());
@@ -63,9 +63,11 @@ public class HeroTest {
         assertEquals("Unassigned", testHero.getHeroSquad());
     }
 
-    //    @Test
-//    public void newHero_assignsSquadCorrectly() throws Exception{
-//        Hero testHero = setUpHero();
-//        testHero.updateSquad();
-//    }
+    @Test
+    public void newHero_assignsSquadCorrectly() throws Exception {
+        Hero testHero = setUpHero();
+        String formerSquad = testHero.getHeroSquad();
+        testHero.updateSquad("Marvel");
+        assertNotEquals(formerSquad, testHero.getHeroSquad());
+    }
 }
