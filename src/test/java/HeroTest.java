@@ -37,4 +37,22 @@ public class HeroTest {
         assertFalse(Hero.getAllHero().contains(testHeroNullUserName));
         assertFalse(Hero.getAllHero().contains(testHeroNullHeroWeakness));
     }
+
+    @Test
+    public void newHero_returnsCorrectId_1() throws Exception{
+        Hero testHero = setUpHero();
+        assertEquals(1, testHero.getId());
+    }
+
+    @Test
+    public void newHero_returnsCorrectHeroById() throws Exception {
+        Hero testHero = setUpHero();
+        assertEquals(1, Hero.getById(testHero.getId()).getId());
+    }
+
+    @Test
+    public void newHero_returnsCorrectHeroByIdWhen2() throws Exception{
+        Hero testHero = setUpHero();
+        assertEquals(1, Hero.getById(testHero.getId()).getId());
+    }
 }
