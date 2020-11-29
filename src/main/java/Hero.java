@@ -37,4 +37,8 @@ public class Hero {
     public static Hero getById(int id){
         return instances.get(id-1);
     }
+
+    public void updateSquad(String heroSquad){
+        squad = heroSquad;
+    }
 }

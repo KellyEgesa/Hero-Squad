@@ -53,6 +53,7 @@ public class HeroTest {
     @Test
     public void newHero_returnsCorrectHeroByIdWhen2() throws Exception{
         Hero testHero = setUpHero();
-        assertEquals(1, Hero.getById(testHero.getId()).getId());
+        Hero secondTestHero = new Hero("Thor", 32, "hammer", "loki");
+        assertEquals(2, Hero.getById(secondTestHero.getId()).getId());
     }
 }
