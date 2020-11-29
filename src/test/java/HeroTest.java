@@ -56,4 +56,16 @@ public class HeroTest {
         Hero secondTestHero = new Hero("Thor", 32, "hammer", "loki");
         assertEquals(2, Hero.getById(secondTestHero.getId()).getId());
     }
+
+    @Test
+    public void newHero_returnsTheCorrectSquadBeforeBeingAssigned_Unassigned() throws Exception {
+        Hero testHero = setUpHero();
+        assertEquals("Unassigned", testHero.getHeroSquad());
+    }
+
+    //    @Test
+//    public void newHero_assignsSquadCorrectly() throws Exception{
+//        Hero testHero = setUpHero();
+//        testHero.updateSquad();
+//    }
 }

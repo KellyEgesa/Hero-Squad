@@ -38,6 +38,10 @@ public class Hero {
         return instances.get(id-1);
     }
 
+    public String getHeroSquad() {
+        return squad;
+    }
+
     public void updateSquad(String heroSquad){
         squad = heroSquad;
     }
