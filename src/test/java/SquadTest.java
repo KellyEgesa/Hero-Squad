@@ -59,6 +59,7 @@ public class SquadTest {
         assertEquals(0,Squad.getAllSquads().size());
     }
 
+
 //    @Test
 //    public void newSquad_addsOneMember() throws Exception {
 //        Squad testSquad = setUpSquad();
