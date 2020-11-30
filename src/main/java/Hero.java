@@ -51,6 +51,26 @@ public class Hero {
         squad = null;
     }
 
+    public String getHeroName() {
+        return heroName;
+    }
+
+    public int getHeroAge() {
+        return heroAge;
+    }
+
+    public String getHeroPower() {
+        return heroPower;
+    }
+
+    public String getHeroWeakness() {
+        return heroWeakness;
+    }
+
+    public Squad getSquad() {
+        return squad;
+    }
+
     public static void removeAllHeros(){
         instances.clear();
     }
