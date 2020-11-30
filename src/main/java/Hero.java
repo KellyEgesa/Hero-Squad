@@ -51,4 +51,8 @@ public class Hero {
         squad = null;
 
     }
+
+//    public static ArrayList<Hero> getSquadById(int id){
+//
+//    }
 }
