@@ -21,4 +21,10 @@ public class SquadTest {
         assertTrue(Squad.getAllSquads().contains(testSquad));
         assertTrue(Squad.getAllSquads().contains(secondTestSquad));
     }
+
+    @Test
+    public void newSquad_assignsIdCorrectly_1() throws Exception {
+        Squad testSquad = setUpSquad();
+        assertEquals(1, testSquad.getSquadId());
+    }
 }
