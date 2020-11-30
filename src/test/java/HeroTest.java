@@ -79,4 +79,5 @@ public class HeroTest {
         testHero.removeSquad();
         assertNull(testHero.getHeroSquad());
     }
+
 }
