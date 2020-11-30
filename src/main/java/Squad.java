@@ -8,6 +8,7 @@ public class Squad {
     private int activeSquadMembers;
     private static ArrayList<Squad> instances = new ArrayList<>();
 
+
     public Squad(int maxSize, String name, String squadCause) {
         this.maxSize = maxSize;
         this.squadName = name;
@@ -49,5 +50,7 @@ public class Squad {
         activeSquadMembers += 1;
     }
 
-
+    public String getSquadName() {
+        return squadName;
+    }
 }
