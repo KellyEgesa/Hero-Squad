@@ -49,10 +49,30 @@ public class Hero {
     public void removeSquad(){
         squad.removeSquadMember();
         squad = null;
-
     }
 
-//    public static ArrayList<Hero> getSquadById(int id){
-//
-//    }
+    public static void removeAllHeros(){
+        instances.clear();
+    }
+
+    public static ArrayList getHerosBySquadId(int id){
+        Squad testSquad = Squad.findSquadById(id);
+        ArrayList heroWithSquad = new ArrayList();
+        instances.forEach(hero -> {
+           if(hero.squad == testSquad){
+               heroWithSquad.add(hero);
+           }
+        });
+        return heroWithSquad;
+    }
+
+    public static void deleteMultipleHeroSquad(int id){
+        Squad testSquad = Squad.findSquadById(id);
+        ArrayList heroWithSquad = new ArrayList();
+        instances.forEach(hero -> {
+            if(hero.squad == testSquad){
+                hero.squad = null;
+            }
+        });
+    }
 }
