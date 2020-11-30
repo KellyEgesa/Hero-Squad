@@ -15,7 +15,7 @@ public class Squad {
         id = instances.size();
     }
 
-    public static ArrayList getAllSquads(){
+    public static ArrayList<Squad> getAllSquads(){
         return instances;
     }
 
@@ -25,6 +25,10 @@ public class Squad {
 
     public static Squad findSquadById(int id){
         return instances.get(id-1);
+    }
+
+    public void deleteSquad(){
+        instances.remove(this.id-1);
     }
 
 }

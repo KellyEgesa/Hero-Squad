@@ -41,4 +41,17 @@ public class SquadTest {
         Squad testSquad = setUpSquad();
         assertEquals(1, Squad.findSquadById(testSquad.getSquadId()).getSquadId());
     }
+
+    @Test
+    public void newSquad_isDeletedCorrectly() throws Exception {
+        Squad testSquad = setUpSquad();
+        Squad secondTestSquad = new Squad(5, "Justice League", "Lex Luthor");
+        testSquad.deleteSquad();
+        assertEquals(1, Squad.getAllSquads().size());
+        assertEquals(2, Squad.getAllSquads().get(0).getSquadId());
+    }
+
+    @Test
+    public void newSquad() {
+    }
 }
