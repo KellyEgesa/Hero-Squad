@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -6,6 +7,11 @@ public class SquadTest {
 
     public Squad setUpSquad() throws Exception{
         return new Squad(8, "Marvel", "Alien Evil");
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        Squad.deleteAllSquads();
     }
 
     @Test
@@ -58,15 +64,6 @@ public class SquadTest {
         Squad.deleteAllSquads();
         assertEquals(0,Squad.getAllSquads().size());
     }
-
-
-
-//    @Test
-//    public void newSquad_addsOneMember() throws Exception {
-//        Squad testSquad = setUpSquad();
-//        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
-//        testHero.updateSquad();
-//    }
 
     @Test
     public void newSquad_addsOneMember() throws Exception {
