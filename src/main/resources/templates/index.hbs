@@ -1,0 +1,26 @@
+{{#partial "content"}}
+    <div>
+        <h1>Welcome to Hero Squad</h1>
+        <div>
+            <a href="/addSquad">
+                <button class="btn btn-danger">Add Squad</button>
+            </a>
+            <a href="/addHero">
+                <button class="btn btn-danger">Add Hero</button>
+            </a>
+        </div>
+
+        {{#if squads}}
+            {{#each squads}}
+                <p>Active squad members: {{ activeSquadMembers }}</p>
+                maxSize{{maxSize}}
+                squadName{{squadName}}
+                squadCause{{squadCause}}
+                id {{id}}
+                activeSquadMembers{{activeSquadMembers}}
+
+            {{/each}}
+        {{/if}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}
