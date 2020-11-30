@@ -57,6 +57,12 @@ public class SquadTest {
         Squad secondTestSquad = new Squad(5, "Justice League", "Lex Luthor");
         Squad.deleteAllSquads();
         assertEquals(0,Squad.getAllSquads().size());
-
     }
+
+//    @Test
+//    public void newSquad_addsOneMember() throws Exception {
+//        Squad testSquad = setUpSquad();
+//        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
+//        testHero.updateSquad();
+//    }
 }

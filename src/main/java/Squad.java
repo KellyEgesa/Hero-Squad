@@ -5,12 +5,14 @@ public class Squad {
     private String squadName;
     private String squadCause;
     private int id;
+    private int activeSquadMembers;
     private static ArrayList<Squad> instances = new ArrayList<>();
 
     public Squad(int maxSize, String name, String squadCause) {
         this.maxSize = maxSize;
         this.squadName = name;
         this.squadCause = squadCause;
+        this.activeSquadMembers = maxSize;
         instances.add(this);
         id = instances.size();
     }
@@ -19,12 +21,12 @@ public class Squad {
         return instances;
     }
 
-    public int getSquadId() {
-        return id;
-    }
-
     public static Squad findSquadById(int id) {
         return instances.get(id - 1);
+    }
+
+    public int getSquadId() {
+        return id;
     }
 
     public void deleteSquad() {
@@ -33,6 +35,10 @@ public class Squad {
 
     public static void deleteAllSquads() {
         instances.clear();
+    }
+
+    public void addSquadMember(){
+        activeSquadMembers -= 1;
     }
 
 }
