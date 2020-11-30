@@ -31,10 +31,14 @@ public class Squad {
     }
 
     public void deleteSquad() {
+        Hero.deleteMultipleHeroSquad(this.id);
         instances.remove(this.id - 1);
     }
 
     public static void deleteAllSquads() {
+        for (Squad squad : instances) {
+            Hero.deleteMultipleHeroSquad(squad.id);
+        }
         instances.clear();
     }
 
@@ -50,7 +54,5 @@ public class Squad {
         activeSquadMembers += 1;
     }
 
-    public String getSquadName() {
-        return squadName;
-    }
+
 }
