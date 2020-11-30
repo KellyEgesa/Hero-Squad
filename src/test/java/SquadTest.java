@@ -27,4 +27,16 @@ public class SquadTest {
         Squad testSquad = setUpSquad();
         assertEquals(1, testSquad.getSquadId());
     }
+
+    @Test
+    public void newSquad_assignsIdCorrectlyMultipleSquads_2() throws Exception {
+        Squad testSquad = setUpSquad();
+        Squad secondTestSquad = new Squad(5, "Justice League", "Lex Luthor");
+        assertEquals(2, secondTestSquad.getSquadId());
+
+    }
+
+    @Test
+    public void name() {
+    }
 }
