@@ -8,6 +8,7 @@ public class HeroTest {
 
     @After
     public void tearDown() throws Exception {
+        Hero.removeAllHeros();
     }
 
     public Hero setUpHero() throws Exception {

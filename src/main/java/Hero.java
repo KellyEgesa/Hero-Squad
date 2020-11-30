@@ -49,7 +49,10 @@ public class Hero {
     public void removeSquad(){
         squad.removeSquadMember();
         squad = null;
+    }
 
+    public static void removeAllHeros(){
+        instances.clear();
     }
 
 //    public static ArrayList<Hero> getSquadById(int id){
