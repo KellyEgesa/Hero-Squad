@@ -45,4 +45,9 @@ public class Squad {
         return maxSize - activeSquadMembers;
     }
 
+    public void removeSquadMember(){
+        activeSquadMembers += 1;
+    }
+
+
 }

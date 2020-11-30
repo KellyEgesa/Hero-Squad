@@ -66,4 +66,11 @@ public class SquadTest {
         testHero.addSquad(testSquad);
         assertEquals(1, testSquad.getActiveSquadMembers());
     }
+
+    @Test
+    public void newSquad_removeOneMember() throws Exception {
+        Squad testSquad = setUpSquad();
+        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
+
+    }
 }
