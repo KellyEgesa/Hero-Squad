@@ -59,10 +59,18 @@ public class SquadTest {
         assertEquals(0,Squad.getAllSquads().size());
     }
 
-//    @Test
-//    public void newSquad_addsOneMember() throws Exception {
-//        Squad testSquad = setUpSquad();
-//        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
-//        testHero.updateSquad();
-//    }
+    @Test
+    public void newSquad_addsOneMember() throws Exception {
+        Squad testSquad = setUpSquad();
+        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
+        testHero.addSquad(testSquad);
+        assertEquals(1, testSquad.getActiveSquadMembers());
+    }
+
+    @Test
+    public void newSquad_removeOneMember() throws Exception {
+        Squad testSquad = setUpSquad();
+        Hero testHero = new Hero("SpiderMan", 19, "webCrawler", "MaryJane");
+
+    }
 }
