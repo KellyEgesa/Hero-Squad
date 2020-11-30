@@ -60,14 +60,14 @@ public class HeroTest {
     @Test
     public void newHero_returnsTheCorrectSquadBeforeBeingAssigned_Unassigned() throws Exception {
         Hero testHero = setUpHero();
-        assertEquals("Unassigned", testHero.getHeroSquad());
+        assertNull(testHero.getHeroSquad());
     }
 
     @Test
     public void newHero_assignsSquadCorrectly() throws Exception {
         Hero testHero = setUpHero();
-        String formerSquad = testHero.getHeroSquad();
-        testHero.updateSquad("Marvel");
-        assertNotEquals(formerSquad, testHero.getHeroSquad());
+        Squad testSquad = new Squad(5, "Justice League", "Lex Luthor");
+        testHero.addSquad(testSquad);
+        assertEquals(testSquad, testHero.getHeroSquad());
     }
 }

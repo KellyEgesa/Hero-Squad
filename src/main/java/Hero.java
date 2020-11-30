@@ -7,7 +7,7 @@ public class Hero {
     private String heroPower;
     private String heroWeakness;
     private int id;
-    private String squad;
+    private Squad squad;
     private static ArrayList<Hero> instances = new ArrayList<>();
 
     public Hero(String heroName, int heroAge, String heroPower, String heroWeakness) throws Exception{
@@ -16,7 +16,6 @@ public class Hero {
             this.heroAge = heroAge;
             this.heroPower = heroPower;
             this.heroWeakness = heroWeakness;
-            squad = "Unassigned";
             instances.add(this);
             id = instances.size();
         }
@@ -38,11 +37,12 @@ public class Hero {
         return instances.get(id-1);
     }
 
-    public String getHeroSquad() {
+    public Squad getHeroSquad() {
         return squad;
     }
 
-    public void updateSquad(String heroSquad){
-        squad = heroSquad;
+    public void addSquad(Squad squad){
+        squad.addSquadMember();
+        this.squad = squad;
     }
 }
