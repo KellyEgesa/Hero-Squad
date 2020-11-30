@@ -47,6 +47,7 @@ public class Hero {
     }
 
     public void removeSquad(){
+        squad.removeSquadMember();
         squad = null;
 
     }
