@@ -55,6 +55,17 @@ public class Hero {
         instances.clear();
     }
 
+    public static ArrayList getHerosBySquadId(int id){
+        Squad testSquad = Squad.findSquadById(id);
+        ArrayList heroWithSquad = new ArrayList();
+        instances.forEach(hero -> {
+           if(hero.squad == testSquad){
+               heroWithSquad.add(hero);
+           }
+        });
+        return heroWithSquad;
+    }
+
 //    public static ArrayList<Hero> getSquadById(int id){
 //
 //    }

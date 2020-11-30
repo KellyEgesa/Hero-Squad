@@ -59,7 +59,7 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_returnsTheCorrectSquadBeforeBeingAssigned_Unassigned() throws Exception {
+    public void newHero_returnsTheCorrectSquadBeforeBeingAssigned_null() throws Exception {
         Hero testHero = setUpHero();
         assertNull(testHero.getHeroSquad());
     }
@@ -81,4 +81,16 @@ public class HeroTest {
         assertNull(testHero.getHeroSquad());
     }
 
+    @Test
+    public void newHero_getsHeroBySquad_2() throws Exception {
+        Hero testHero = setUpHero();
+        Hero secondTestHero = new Hero("Thor", 32, "hammer", "loki");
+        Hero thirdTestHero = new Hero("Iron Man", 42, "brain", "past");
+        Squad testSquad = new Squad(5, "Justice League", "Lex Luthor");
+        Squad secondTestSquad = new Squad(8, "Marvel", "Alien Evil");
+        testHero.addSquad(testSquad);
+        secondTestHero.addSquad(testSquad);
+        thirdTestHero.addSquad(secondTestSquad);
+        assertEquals(2, Hero.getHerosBySquadId(testSquad.getSquadId()).size());
+    }
 }
