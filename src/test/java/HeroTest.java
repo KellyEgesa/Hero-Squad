@@ -70,4 +70,13 @@ public class HeroTest {
         testHero.addSquad(testSquad);
         assertEquals(testSquad, testHero.getHeroSquad());
     }
+
+    @Test
+    public void newHero_removesSquadCorrectly() throws Exception {
+        Hero testHero = setUpHero();
+        Squad testSquad = new Squad(5, "Justice League", "Lex Luthor");
+        testHero.addSquad(testSquad);
+        testHero.removeSquad();
+        assertNull(testHero.getHeroSquad());
+    }
 }
