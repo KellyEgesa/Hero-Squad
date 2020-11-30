@@ -66,7 +66,13 @@ public class Hero {
         return heroWithSquad;
     }
 
-//    public static ArrayList<Hero> getSquadById(int id){
-//
-//    }
+    public static void deleteMultipleHeroSquad(int id){
+        Squad testSquad = Squad.findSquadById(id);
+        ArrayList heroWithSquad = new ArrayList();
+        instances.forEach(hero -> {
+            if(hero.squad == testSquad){
+                hero.squad = null;
+            }
+        });
+    }
 }
