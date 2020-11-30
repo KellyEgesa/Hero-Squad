@@ -1,23 +1,26 @@
 {{#partial "content"}}
-    <div class="card">
-        <form action="/post/new/hero" method="post">
-            <div class="form-group">
-                <label for="heroName">Hero Name</label>
-                <input type="text" class="form-control" name="heroName" id="heroName" required>
-            </div>
-            <div class="form-group">
-                <label for="heroPower">Hero Power</label>
-                <input type="text" class="form-control" id="heroPower" name="heroPower" required>
-            </div>
-            <div class="form-group">
-                <label for="heroWeakness">Hero Weakness</label>
-                <input type="text" class="form-control" id="heroWeakness" name="heroWeakness" required>
-            </div>
-            <div class="form-group">
-                <label for="heroAge">Enter the heros age:</label>
-                <input type="number" class="form-control" id="heroAge" name="heroAge" required>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
+    <div class="full">
+        <div class="card mx-auto" id="cardForm">
+            <h2>ADD A HERO</h2>
+            <form action="/post/new/hero" method="post">
+                <div class="form-group">
+                    <label for="heroName">Hero Name</label>
+                    <input type="text" class="form-control" name="heroName" id="heroName" required>
+                </div>
+                <div class="form-group">
+                    <label for="heroPower">Hero Power</label>
+                    <input type="text" class="form-control" id="heroPower" name="heroPower" required>
+                </div>
+                <div class="form-group">
+                    <label for="heroWeakness">Hero Weakness</label>
+                    <input type="text" class="form-control" id="heroWeakness" name="heroWeakness" required>
+                </div>
+                <div class="form-group" id="smallInput">
+                    <label for="heroAge">Enter the heros age:</label>
+                    <input type="number" class="form-control" id="heroAge" name="heroAge" required>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
     </div>
 {{/partial}}{{>layout.hbs}}

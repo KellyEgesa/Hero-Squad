@@ -14,7 +14,6 @@ public class App {
             Map<String, Object>model = new HashMap<>();
             ArrayList<Squad> squads =  Squad.getAllSquads();
             model.put("squads", squads);
-            System.out.println(squads.get(0).getMaxSize());
             return modelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -26,6 +25,13 @@ public class App {
         get("/addHero", (request, response) -> {
             Map<String, Object>model = new HashMap<>();
             return modelAndView(model, "hero-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/squad", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            ArrayList<Squad> squads =  Squad.getAllSquads();
+            model.put("squads", squads);
+            return modelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/post/new/squad", (request, response) -> {

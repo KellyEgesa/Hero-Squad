@@ -1,20 +1,25 @@
 {{#partial "content"}}
-    <div class="card">
-        <form action="/post/new/squad" method="post">
-            <div class="form-group">
-                <label for="squadName">Squad Name</label>
-                <input type="text" class="form-control" name="squadName" id="squadName" required>
-            </div>
-            <div class="form-group">
-                <label for="squadCause">Squad Cause</label>
-                <input type="text" class="form-control" id="squadCause" name="squadCause" required>
-            </div>
-            <div class="form-group">
-                <label for="squadCause">Enter size of members</label>
-                <input type="number" class="form-control" id="squadMaxSize" name="maxSize" required>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
+    <div class="full">
+        <div class="card mx-auto" id="cardForm">
+            <h2>ADD A SQUAD</h2>
+            <form action="/post/new/squad" method="post">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="squadName">Squad Name</label>
+                        <input type="text" class="form-control" name="squadName" id="squadName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="squadCause">Squad Cause</label>
+                        <input type="text" class="form-control" id="squadCause" name="squadCause" required>
+                    </div>
+                    <div class="form-group" id="smallInput">
+                        <label for="squadCause">Enter size of members</label>
+                        <input type="number" class="form-control" id="squadMaxSize" name="maxSize" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 {{/partial}}{{>layout.hbs}}

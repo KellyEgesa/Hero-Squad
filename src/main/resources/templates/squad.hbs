@@ -1,0 +1,29 @@
+{{#partial "content"}}
+    <div>
+        <h1>SQUADS</h1>
+        {{#if squads}}
+            <div>
+                <a href="/addSquad">Click here to create a new Squad</a>
+            </div>
+            <div class="row">
+                {{#each squads}}
+                    <div class="card m-2 my-auto" id="squadCard">
+                        <div class="card-body">
+                            <h3>Squad Name: {{squadName}} </h3>
+                            <h6 class="card-subtitle mb-2 text-muted">Squad Cause: {{squadCause}}</h6>
+                            Active Squad Members: {{activeSquadMembers}}
+                            Max Size: {{maxSize}}
+                            <a href="/hero/{{id}}"><button class="btn btn-primary float-right m-2">Click to see more</button></a>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{else }}
+            <div>
+                <p>No squads found</p>
+                <a href="/addSquad">Click here to create a new Squad</a>
+            </div>
+        {{/if}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}
