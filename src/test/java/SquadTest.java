@@ -52,6 +52,11 @@ public class SquadTest {
     }
 
     @Test
-    public void newSquad() {
+    public void newSquad_deletesAllSquads() throws Exception {
+        Squad testSquad = setUpSquad();
+        Squad secondTestSquad = new Squad(5, "Justice League", "Lex Luthor");
+        Squad.deleteAllSquads();
+        assertEquals(0,Squad.getAllSquads().size());
+
     }
 }
