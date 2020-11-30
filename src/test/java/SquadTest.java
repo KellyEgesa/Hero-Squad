@@ -37,6 +37,8 @@ public class SquadTest {
     }
 
     @Test
-    public void name() {
+    public void newSquad_getSquadById() throws Exception{
+        Squad testSquad = setUpSquad();
+        assertEquals(1, Squad.findSquadById(testSquad.getSquadId()).getSquadId());
     }
 }

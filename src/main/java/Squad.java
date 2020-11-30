@@ -22,4 +22,9 @@ public class Squad {
     public int getSquadId(){
         return id;
     }
+
+    public static Squad findSquadById(int id){
+        return instances.get(id-1);
+    }
+
 }
