@@ -54,5 +54,23 @@ public class Squad {
         activeSquadMembers += 1;
     }
 
+    public int getActiveSquadMember(){
+        return activeSquadMembers;
+    }
 
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public String getSquadName() {
+        return squadName;
+    }
+
+    public String getSquadCause() {
+        return squadCause;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
