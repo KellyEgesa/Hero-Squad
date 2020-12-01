@@ -44,6 +44,7 @@ public class Squad {
 
     public void addSquadMember(){
         activeSquadMembers -= 1;
+        instances.set(id, this);
     }
 
     public int getActiveSquadMembers(){
@@ -52,6 +53,7 @@ public class Squad {
 
     public void removeSquadMember(){
         activeSquadMembers += 1;
+        instances.set(id, this);
     }
 
     public int getActiveSquadMember(){
