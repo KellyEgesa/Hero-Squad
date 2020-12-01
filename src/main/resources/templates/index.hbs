@@ -1,14 +1,19 @@
 {{#partial "content"}}
-    <div>
-        <h1>Welcome to Hero Squad</h1>
-        <div>
-            <a href="/squad">
-                <button class="btn btn-danger">Squads</button>
-            </a>
-            <a href="/hero">
-                <button class="btn btn-danger">Heros</button>
-            </a>
-        </div>
+    <div class="full">
+        <ul style="list-style-type:none;">
+            <li><h1>Welcome to Hero Squad</h1></li>
+            <li>
+                <div>
+                    <a href="/squad">
+                        <button class="btn btn-danger float-left">Squads</button>
+                    </a>
+                    <a href="/hero">
+                        <button class="btn btn-danger float-right">Heros</button>
+                    </a>
+                </div>
+            </li>
+
+        </ul>
     </div>
 {{/partial}}
 {{>layout.hbs}}

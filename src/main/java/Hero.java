@@ -54,7 +54,9 @@ public class Hero {
     }
 
     public void removeSquad(){
-        squad.removeSquadMember();
+        if(squad != null){
+            squad.removeSquadMember();
+        }
         squad = null;
         instances.set(this.id - 1, this);
     }
