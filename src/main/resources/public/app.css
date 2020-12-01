@@ -15,6 +15,9 @@ p {
   font-size: 20px;
 }
 #squadCard{
+    width: 35rem;
+}
+#heroCard{
     width: 20rem;
 }
 #cardForm{

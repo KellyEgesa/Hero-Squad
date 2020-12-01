@@ -80,5 +80,52 @@ public class App {
             heroToAssignSquad.addSquad(squadToAssign);
             return modelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/squad/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int squadId = Integer.parseInt(request.params("id"));
+            ArrayList<Hero> heroInSquad = Hero.getHerosBySquadId(squadId);
+            Squad squad = Squad.findSquadById(squadId);
+            model.put("squad", squad);
+            model.put("hero", heroInSquad);
+            return modelAndView(model, "squadTable.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/delete/Squad/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int squadId = Integer.parseInt(request.params("id"));
+            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.params("id")));
+            squadToAssign.deleteSquad();
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/delete/Squad", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Squad.deleteAllSquads();
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/delete/Hero/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int heroId = Integer.parseInt(request.params("id"));
+            Hero heroToDelete = Hero.getById(Integer.parseInt(request.params("id")));
+
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/remove/Hero/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int heroId = Integer.parseInt(request.params("id"));
+            Hero heroRemoveSquad = Hero.getById(Integer.parseInt(request.params("id")));
+            heroRemoveSquad.removeSquad();
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/delete/Hero", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Hero.removeAllHeros();
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 }

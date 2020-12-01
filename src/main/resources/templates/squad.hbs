@@ -3,24 +3,32 @@
         <h1>SQUADS</h1>
         {{#if squads}}
             <div>
-                <a href="/addSquad">Click here to create a new Squad</a>
+                <a href="/addSquad">Click here to create a new Squad<br>
+                <a href="/delete/Squad">
+                    <button type="button" class="btn btn-danger">Delete All Squads</button>
+                </a>
             </div>
             <div class="row">
                 {{#each squads}}
-                    <div class="card m-2 my-auto" id="squadCard">
+                    <div class="card mx-auto m-2" id="squadCard">
                         <div class="card-body">
                             <h3>Squad Name: {{squadName}} </h3>
                             <h6 class="card-subtitle mb-2 text-muted">Squad Cause: {{squadCause}}</h6>
                             Active Squad Members: {{activeSquadMembers}}
                             Max Size: {{maxSize}}
-                            <a href="/hero/{{id}}"><button class="btn btn-primary float-right m-2">Click to see more</button></a>
+                            <a href="/squad/{{id}}">
+                                <button class="btn btn-primary float-right m-2">Click to see more</button>
+                            </a>
+                            <a href="/delete/Squad/{{id}}">
+                                <button type="button" class="btn btn-danger float-left m-2">Delete</button>
+                            </a>
                         </div>
                     </div>
                 {{/each}}
             </div>
         {{else }}
             <div>
-                <p>No squads found</p>
+                <p style="color: white">No squads found</p>
                 <a href="/addSquad">Click here to create a new Squad</a>
             </div>
         {{/if}}
