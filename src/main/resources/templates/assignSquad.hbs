@@ -1,0 +1,22 @@
+{{#partial "content"}}
+    <div class="full">
+        <div class="card mx-auto" id="cardForm">
+            <h2>ADD A SQUAD TO A HERO</h2>
+            <h5> {{hero.heroName}}</h5>
+            Choose the squad below:-
+            <form action="/assignSquad/{{hero.id}}" method="post">
+                <div class="card-body">
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            {{#each squads}}
+                                <option value={{id}}>{{squadName}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{{/partial}}{{>layout.hbs}}
