@@ -1,24 +1,30 @@
 {{#partial "content"}}
-    <div>
-        <h1>HEROS</h1>
+    <div class>
+        <h1>HEROES</h1>
     {{#if heros}}
             <div>
-                <a href="/addHero">Click here to create a new Hero</a>
+                <a href="/addHero">Click here to create a new Hero</a><br>
+                <a href="/delete/Hero">
+                    <button type="button" class="btn btn-danger m-2">Delete all users</button>
+                </a>
             </div>
         <div class="row">
         {{#each heros}}
-                <div class="card m-2 my-auto" id="squadCard">
+                <div class="card my-auto m-2 " id="heroCard">
                     <div class="card-body">
                         <h3 style="text-align: center">{{heroName}} </h3>
                         <h6 class="card-subtitle mb-2 text-muted">Power: {{heroPower}}</h6>
                         <p>Weakness: {{heroWeakness}}</p>
                         Age: {{heroAge}}
+                        <a href="/delete/Hero/{{id}}">
+                            <button type="button" class="btn btn-danger float-right ">Delete</button>
+                        </a>
                         {{#if squad.squadName}}
                             <div class="card-footer">
-                                SQUAD:-
-                                <p>Squad Name: {{squadName}} </p>
-                                <p class="card-subtitle mb-2 text-muted">Squad Cause: {{squadCause}}</p>
-                                Active Squad Members: {{activeSquadMembers}}
+                                <h6 style="text-align: center">SQUAD:-</h6>
+                                <p>Name: {{squad.squadName}} </p>
+                                <p class="card-subtitle mb-2 text-muted">Cause: {{squad.squadCause}}</p>
+                                Active Squad Members: {{squad.activeSquadMembers}}
                             </div>
                         {{else}}
                             <div class="card-footer">
@@ -29,15 +35,13 @@
                                 </a>
                             </div>
                         {{/if}}
-
                     </div>
                 </div>
-            </div>
         {{/each}}
         </div>
     {{else }}
         <div>
-            <p>No Heros found</p>
+            <p style="color: white">No Heroes found</p>
             <a href="/addHero">Click here to create a new Hero</a>
         </div>
     {{/if}}

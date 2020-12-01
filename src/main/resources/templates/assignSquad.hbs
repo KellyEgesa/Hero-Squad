@@ -1,12 +1,11 @@
 {{#partial "content"}}
     <div class="full">
         <div class="card mx-auto" id="cardForm">
-            <h2>ADD A SQUAD TO A HERO</h2>
-            <h5> {{hero.heroName}}</h5>
-            Choose the squad below:-
-
-                <div class="card-body">
-                    <form action="/assignSquad/{{hero.id}}" method="post">
+            <div class="card-body">
+                <h2>ADD A SQUAD TO A HERO</h2>
+                <h5> {{hero.heroName}}</h5>
+                Choose the squad below:-
+                <form action="/assignSquad/{{hero.id}}" method="post">
                     <div class="form-group">
                         <select class="form-control" name="squadId" required>
                             {{#each squads}}
@@ -15,10 +14,10 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-
+                </form>
+            </div>
         </div>
     </div>
 
-{{/partial}}{{>layout.hbs}}
+{{/partial}}
+{{>layout.hbs}}

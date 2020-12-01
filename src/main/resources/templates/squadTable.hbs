@@ -1,0 +1,40 @@
+{{#partial "content"}}
+    <div>
+        <h1>{{squad.squadName}}</h1>
+        {{#if hero}}
+            <div>
+                <a href="/addSquad">Click here to create a new Squad</a>
+            </div>
+            <table class="table table-hover table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Hero Name</th>
+                    <th scope="col">Hero Power</th>
+                    <th scope="col">Hero Weakness</th>
+                    <th scope="col">Hero Age</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each hero}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{heroName}}</td>
+                        <td>{{heroPower}}</td>
+                        <td>{{heroWeakness}}</td>
+                        <td>{{heroAge}}</td>
+                        <td><a href="//remove/Hero/{{id}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+
+        {{else }}
+            <div>
+                <p>This squad is empty</p>
+                <a href="/hero">Click here to add a member hero</a>
+            </div>
+        {{/if}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}
