@@ -44,13 +44,13 @@ public class Hero {
     public void addSquad(Squad squad){
         squad.addSquadMember();
         this.squad = squad;
-        instances.set(id, this);
+        instances.set(this.id - 1, this);
     }
 
     public void removeSquad(){
         squad.removeSquadMember();
         squad = null;
-        instances.set(id, this);
+        instances.set(this.id - 1, this);
     }
 
     public String getHeroName() {
