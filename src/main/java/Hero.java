@@ -41,6 +41,12 @@ public class Hero {
         return squad;
     }
 
+    public void deleteHero(){
+        removeSquad();
+        instances.remove(this.id -1);
+    }
+
+
     public void addSquad(Squad squad){
         squad.addSquadMember();
         this.squad = squad;
