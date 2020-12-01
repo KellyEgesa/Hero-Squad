@@ -76,7 +76,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             int squadId = Integer.parseInt(request.params("id"));
             Hero heroToAssignSquad = Hero.getById(squadId);
-            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.queryParams("squad")));
+            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.queryParams("squadId")));
             heroToAssignSquad.addSquad(squadToAssign);
             return modelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
