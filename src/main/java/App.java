@@ -75,9 +75,8 @@ public class App {
         post("/assignSquad/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int squadId = Integer.parseInt(request.params("id"));
-            System.out.println();
             Hero heroToAssignSquad = Hero.getById(squadId);
-            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.queryParams("squad")));
+            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.queryParams("squadId")));
             heroToAssignSquad.addSquad(squadToAssign);
             return modelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
