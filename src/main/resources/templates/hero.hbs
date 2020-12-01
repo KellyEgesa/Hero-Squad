@@ -1,0 +1,46 @@
+{{#partial "content"}}
+    <div>
+        <h1>HEROS</h1>
+    {{#if heros}}
+            <div>
+                <a href="/addHero">Click here to create a new Hero</a>
+            </div>
+        <div class="row">
+        {{#each heros}}
+                <div class="card m-2 my-auto" id="squadCard">
+                    <div class="card-body">
+                        <h3 style="text-align: center">{{heroName}} </h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Power: {{heroPower}}</h6>
+                        <p>Weakness: {{heroWeakness}}</p>
+                        Age: {{heroAge}}
+                        {{#if squad.squadName}}
+                            <div class="card-footer">
+                                SQUAD:-
+                                <p>Squad Name: {{squadName}} </p>
+                                <p class="card-subtitle mb-2 text-muted">Squad Cause: {{squadCause}}</p>
+                                Active Squad Members: {{activeSquadMembers}}
+                            </div>
+                        {{else}}
+                            <div class="card-footer">
+                                <a href="/hero/squad/{{id}}">
+                                    <button class="btn btn-warning">
+                                        Assign a squad
+                                    </button>
+                                </a>
+                            </div>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        </div>
+    {{else }}
+        <div>
+            <p>No Heros found</p>
+            <a href="/addHero">Click here to create a new Hero</a>
+        </div>
+    {{/if}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}
