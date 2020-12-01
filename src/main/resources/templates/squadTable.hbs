@@ -23,7 +23,7 @@
                         <td>{{heroPower}}</td>
                         <td>{{heroWeakness}}</td>
                         <td>{{heroAge}}</td>
-                        <td><a href="//remove/Hero/{{id}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
+                        <td><a href="/remove/Hero/{{id}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
                     </tr>
                 {{/each}}
                 </tbody>
@@ -31,7 +31,7 @@
 
         {{else }}
             <div>
-                <p>This squad is empty</p>
+                <p style="color: white">This squad is empty</p>
                 <a href="/hero">Click here to add a member hero</a>
             </div>
         {{/if}}

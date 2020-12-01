@@ -72,6 +72,15 @@ public class App {
             return modelAndView(model, "assignSquad.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/assignSquad/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int squadId = Integer.parseInt(request.params("id"));
+            Hero heroToAssignSquad = Hero.getById(squadId);
+            Squad squadToAssign = Squad.findSquadById(Integer.parseInt(request.queryParams("squadId")));
+            heroToAssignSquad.addSquad(squadToAssign);
+            return modelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
         get("/squad/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int squadId = Integer.parseInt(request.params("id"));
